@@ -1,331 +1,1486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GH1V8PSN4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-6GH1V8PSN4');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Omogbolahan Oladapo | Data Science & Analytics Portfolio</title>
-      
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Omogbolahan Oladapo | Data Analyst & Health Informatics</title>
+
+    <meta
+        name="description"
+        content="Portfolio of Omogbolahan Oladapo, MSc Data Science graduate specialising in data analysis, business intelligence, health informatics, reporting and data quality."
+    >
+
+    <style>
+        :root {
+            --navy: #102a43;
+            --blue: #2463a9;
+            --light-blue: #edf5fc;
+            --text: #243b53;
+            --muted: #627d98;
+            --border: #d9e2ec;
+            --background: #f8fafc;
+            --white: #ffffff;
+            --success: #22745b;
+            --shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+            --radius: 18px;
+            --max-width: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Helvetica, Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            line-height: 1.2;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 1.04rem;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 750;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.93rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--navy);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 100px 0 90px;
+            background:
+                radial-gradient(circle at top right, #dceeff 0%, transparent 35%),
+                var(--white);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: #eaf7f2;
+            color: var(--success);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+        }
+
+        .hero h1 {
+            color: var(--navy);
+            font-size: clamp(3rem, 7vw, 5.2rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .hero-role {
+            color: var(--blue);
+            font-size: clamp(1.25rem, 3vw, 1.65rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            font-size: 1.08rem;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--white);
+            color: var(--navy);
+            border: 1px solid var(--border);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .hero-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tool-pill {
+            background: var(--light-blue);
+            color: var(--navy);
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 650;
+        }
+
+        .hero-card {
+            background: var(--navy);
+            color: var(--white);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-stat {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .hero-stat:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 1.65rem;
+            margin-bottom: 2px;
+        }
+
+        .hero-stat span {
+            font-size: 0.84rem;
+            color: #cbd9e8;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: var(--muted);
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        .career-box {
+            margin-top: 28px;
+            background: var(--light-blue);
+            border-radius: var(--radius);
+            padding: 25px;
+        }
+
+        .career-box h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .career-box p {
+            margin: 0;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 15px;
+        }
+
+        .highlight-card {
+            padding: 22px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 14px;
+        }
+
+        .highlight-card h3 {
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .highlight-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-top {
+            padding: 28px 28px 12px;
+        }
+
+        .project-number {
+            color: var(--blue);
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .project-stack {
+            color: var(--blue);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .project-list {
+            padding: 16px 28px 5px 46px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .project-list li {
+            padding: 4px 0;
+        }
+
+        .project-links {
+            padding: 22px 28px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        /* TRAINING */
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .training-card {
+            background: var(--white);
+            padding: 26px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .training-card h3 {
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin-bottom: 7px;
+        }
+
+        .training-provider {
+            display: block;
+            color: var(--blue);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .training-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .skill-group {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 27px;
+        }
+
+        .skill-group h3 {
+            color: var(--navy);
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .skill-tag {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 7px 11px;
+            font-size: 0.82rem;
+            color: var(--text);
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            max-width: 850px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 35px 30px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-date {
+            color: var(--blue);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            color: var(--navy);
+            font-size: 1.12rem;
+        }
+
+        .timeline-company {
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        /* EDUCATION */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .education-card {
+            padding: 27px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .education-card h3 {
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .contact-box {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-box .section-label {
+            color: #8fc5fa;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 17px;
+        }
+
+        .contact-box p {
+            color: #c6d6e5;
+            margin-bottom: 28px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .contact-button {
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            font-weight: 650;
+        }
+
+        .contact-button:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        footer {
+            background: #091d2f;
+            color: #9fb3c8;
+            text-align: center;
+            font-size: 0.82rem;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                max-width: 600px;
+            }
+
+            .projects-grid,
+            .training-grid,
+            .skills-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                padding: 20px 5%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero-buttons,
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .button,
+            .contact-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <div class="container">
-        <h1>Omogbolahan Oladapo</h1>
-        <p>Data Analyst | Business Intelligence | Health Informatics</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/omogbolahan-oladapo" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/PapiiChii" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            
-            <a href="cv/Omogbolahan_Oladapo_CV.docx" target="_blank" title="Download Standard CV"><i class="fas fa-file-pdf"></i></a>
-            <a href="cv/Anonymized_Data_Analyst_CV.docx" target="_blank" title="Download Anonymized CV (Blind Applications)"><i class="fas fa-user-secret"></i></a>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                Omogbolahan Oladapo
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#training">Training</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
         </div>
-    </div>
-</header>
+    </nav>
 
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-      <!-- ABOUT SECTION -->
-<section id="about" class="about-section">
-    <div class="about-container">
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="container hero-grid">
 
-        <div class="about-image">
-            <img src="YOUR-IMAGE-PATH" 
-                 alt="Omogbolahan Oladapo">
+            <div>
+
+                <div class="availability">
+                    <span class="availability-dot"></span>
+                    Open to analyst opportunities
+                </div>
+
+                <h1>Omogbolahan Oladapo</h1>
+
+                <div class="hero-role">
+                    Data Analyst | Business Intelligence | Health Informatics
+                </div>
+
+                <p class="hero-description">
+                    MSc Data Science graduate combining analytics, business
+                    intelligence and frontline healthcare experience. I use data
+                    to investigate problems, improve reporting quality and turn
+                    complex information into clear, practical insights.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="button button-primary">
+                        View My Projects
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/omogbolahan-oladapo/"
+                        target="_blank"
+                        rel="noopener"
+                        class="button button-secondary"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="https://github.com/PapiiChii"
+                        target="_blank"
+                        rel="noopener"
+                        class="button button-secondary"
+                    >
+                        GitHub
+                    </a>
+
+                    <!--
+                    Replace cv.pdf with the exact filename of your CV
+                    after uploading it into your GitHub repository.
+                    -->
+                    <a
+                        href="Omogbolahan_Oladapo_CV.docx"
+                        target="_blank"
+                        class="button button-secondary"
+                    >
+                        View CV
+                    </a>
+
+                </div>
+
+                <div class="hero-tools">
+                    <span class="tool-pill">SQL</span>
+                    <span class="tool-pill">Power BI</span>
+                    <span class="tool-pill">Excel</span>
+                    <span class="tool-pill">Python</span>
+                    <span class="tool-pill">Power Query</span>
+                    <span class="tool-pill">Data Quality</span>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <h3>Profile at a glance</h3>
+
+                <div class="hero-stat">
+                    <strong>MSc</strong>
+                    <span>Data Science, University of Salford</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>58,320</strong>
+                    <span>Records analysed in a Power BI data-quality project</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>14,914</strong>
+                    <span>Cases used in MSc predictive modelling research</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>110k+</strong>
+                    <span>Transactional records used in SQL/Python analysis</span>
+                </div>
+
+            </div>
+
         </div>
+    </header>
 
-        <div class="about-content">
-            <span class="section-label">ABOUT ME</span>
 
-            <h2>Turning Complex Data Into Clear, Actionable Insights</h2>
+    <!-- ABOUT -->
+    <section class="section section-white" id="about">
+        <div class="container">
 
-            <p>
-                I am an <strong>MSc Data Science graduate</strong> with a background in 
-                healthcare support and a strong interest in using data to improve services, 
-                reporting and decision-making.
-            </p>
+            <div class="section-heading">
+                <span class="section-label">About Me</span>
+                <h2>Turning complex data into useful information</h2>
+            </div>
 
-            <p>
-                My analytical experience includes working with large and complex datasets, 
-                data cleaning and validation, exploratory data analysis, statistical modelling, 
-                SQL database querying, Power BI reporting and machine learning.
-            </p>
+            <div class="about-grid">
 
-            <p>
-                For my MSc research at the <strong>University of Salford</strong>, I analysed 
-                UK population data involving <strong>14,914 cases</strong> and developed an 
-                end-to-end analytical pipeline covering data preprocessing, missing-data 
-                assessment, feature engineering, model evaluation and explainable machine learning.
-            </p>
+                <div class="about-text">
 
-            <p>
-                Alongside my technical background, I have practical experience working in 
-                health and social care. This has given me a strong understanding of 
-                <strong>confidentiality, accurate documentation, data quality</strong> and the 
-                importance of reliable information in supporting safe and effective services.
-            </p>
+                    <p>
+                        I am an <strong>MSc Data Science graduate</strong> with a
+                        background in healthcare support and a strong interest in
+                        using data to improve services, reporting and
+                        decision-making.
+                    </p>
 
-            <p>
-                My technical toolkit includes <strong>SQL, Power BI, Excel, Python, Power Query 
-                and statistical analysis</strong>. I enjoy investigating data-quality issues, 
-                identifying trends and anomalies, and presenting findings in a way that helps 
-                people make informed decisions.
-            </p>
+                    <p>
+                        My analytical experience includes working with large and
+                        complex datasets, data cleaning and validation,
+                        exploratory data analysis, statistical modelling, SQL
+                        database querying, Power BI reporting and machine
+                        learning.
+                    </p>
 
-            <div class="career-focus">
-                <h3>Career Focus</h3>
+                    <p>
+                        For my MSc research at the
+                        <strong>University of Salford</strong>, I analysed UK
+                        population data involving
+                        <strong>14,914 cases</strong>. I developed an end-to-end
+                        analytical pipeline covering preprocessing, missing-data
+                        assessment, feature engineering, model evaluation and
+                        explainable machine learning.
+                    </p>
+
+                    <p>
+                        Alongside my technical background, I have practical
+                        experience in health and social care. This has developed
+                        my understanding of
+                        <strong>
+                            confidentiality, accurate documentation, data
+                            quality and information governance
+                        </strong>.
+                    </p>
+
+                    <p>
+                        I enjoy investigating data-quality issues, identifying
+                        trends and anomalies, and presenting findings in a way
+                        that supports informed decisions.
+                    </p>
+
+                    <div class="career-box">
+
+                        <h3>Career Focus</h3>
+
+                        <p>
+                            I am particularly interested in
+                            <strong>
+                                Information Analysis, Health Informatics,
+                                Business Intelligence, Data Quality, Reporting
+                                Analytics and Healthcare Analytics
+                            </strong>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-highlights">
+
+                    <div class="highlight-card">
+                        <h3>Healthcare + Analytics</h3>
+                        <p>
+                            Combines frontline healthcare experience with
+                            postgraduate analytical training.
+                        </p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h3>Data Quality</h3>
+                        <p>
+                            Experienced in validation, missing-data analysis,
+                            anomaly investigation and structured data cleaning.
+                        </p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h3>Business Intelligence</h3>
+                        <p>
+                            Builds clear reporting solutions using Power BI,
+                            Excel, Power Query, SQL and data modelling.
+                        </p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h3>Advanced Analytics</h3>
+                        <p>
+                            Practical experience with statistical modelling,
+                            machine learning and model interpretation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">Featured Work</span>
+                <h2>Analytical Projects</h2>
                 <p>
-                    I am particularly interested in opportunities within 
-                    <strong>Information Analysis, Health Informatics, Business Intelligence, 
-                    Data Quality, Reporting Analytics and Healthcare Analytics.</strong>
+                    Selected projects demonstrating data quality, business
+                    intelligence, SQL, healthcare analytics and predictive
+                    modelling.
                 </p>
             </div>
 
-            <div class="about-tags">
-                <span>Data Analysis</span>
-                <span>Business Intelligence</span>
-                <span>Health Informatics</span>
-                <span>Data Quality</span>
-                <span>SQL</span>
-                <span>Power BI</span>
-                <span>Python</span>
-                <span>Excel</span>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h3>
+                            Greater Manchester Public Transport Reporting &
+                            Data Quality Analysis
+                        </h3>
+
+                        <div class="project-stack">
+                            Power BI • Power Query • DAX • Data Modelling
+                        </div>
+
+                        <p>
+                            Analysed and transformed 58,320 scheduled transport
+                            records into an interactive reporting solution.
+                            During validation, I identified a classification
+                            problem affecting approximately 16.5% of a key
+                            reporting measure, investigated the underlying logic
+                            and corrected the transformation process.
+                        </p>
+
+                    </div>
+
+                    <ul class="project-list">
+                        <li>Data cleaning and transformation</li>
+                        <li>Relational data modelling</li>
+                        <li>DAX measures and calculated fields</li>
+                        <li>Data-quality and anomaly checks</li>
+                        <li>Peak and off-peak reporting</li>
+                        <li>Interactive KPI dashboard development</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/PapiiChii/Greater-Manchester"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h3>
+                            Health Data Analysis & Predictive Modelling
+                        </h3>
+
+                        <div class="project-stack">
+                            Python • Scikit-learn • XGBoost • SHAP
+                        </div>
+
+                        <p>
+                            MSc research using the UK Millennium Cohort Study to
+                            investigate anxiety-related emotional outcomes in
+                            young children. Developed an analytical sample of
+                            14,914 cases and compared multiple supervised
+                            machine-learning models.
+                        </p>
+
+                    </div>
+
+                    <ul class="project-list">
+                        <li>Exploratory data analysis</li>
+                        <li>Missing-data assessment</li>
+                        <li>Feature engineering</li>
+                        <li>Class imbalance management</li>
+                        <li>Stratified cross-validation</li>
+                        <li>AUC, precision, recall and F1 evaluation</li>
+                        <li>SHAP model interpretation</li>
+                    </ul>
+
+                    <div class="project-links">
+
+                        <a
+                            href="https://github.com/PapiiChii/toddler-anxiety-ml-prediction"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View Project →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h3>
+                            Supply Chain Data & Predictive Analytics Pipeline
+                        </h3>
+
+                        <div class="project-stack">
+                            PostgreSQL • Python • Pandas • Random Forest • SHAP
+                        </div>
+
+                        <p>
+                            Developed a SQL and Python analytical pipeline using
+                            more than 110,000 transactional records to investigate
+                            patterns associated with e-commerce order
+                            cancellation.
+                        </p>
+
+                    </div>
+
+                    <ul class="project-list">
+                        <li>SQL data extraction</li>
+                        <li>Data cleaning and transformation</li>
+                        <li>Feature engineering</li>
+                        <li>Imbalanced classification</li>
+                        <li>Random Forest modelling</li>
+                        <li>Explainable model analysis with SHAP</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/PapiiChii"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View GitHub →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 4 -->
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-number">
+                            PROJECT 04
+                        </div>
+
+                        <h3>
+                            Customer Sentiment & NLP Analysis
+                        </h3>
+
+                        <div class="project-stack">
+                            Python • NLP • Pandas • Text Analytics
+                        </div>
+
+                        <p>
+                            Analysed more than 3,600 customer feedback records
+                            using Python-based text processing to identify
+                            sentiment patterns and potential customer retention
+                            signals.
+                        </p>
+
+                    </div>
+
+                    <ul class="project-list">
+                        <li>Text cleaning and preprocessing</li>
+                        <li>Regular expressions</li>
+                        <li>Sentiment classification</li>
+                        <li>Exploratory analysis</li>
+                        <li>Customer insight generation</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a
+                            href="https://github.com/PapiiChii"
+                            target="_blank"
+                            rel="noopener"
+                            class="project-link"
+                        >
+                            View GitHub →
+                        </a>
+                    </div>
+
+                </article>
+
             </div>
 
         </div>
-    </div>
-</section>
-
-<section id="projects" class="section">
-    <div class="container">
-        <h2>Featured Analytical Projects</h2>
-        <div class="projects-grid">
+    </section>
 
 
-             <div class="project-card">
-                <img src="assets/images/dashboard_screenshot.jpg" alt="Greater Manchester Analytics Executive Interface" style="object-fit: cover; background: #fff;">
-                <div class="project-card-content">
-                    <h3>Greater Manchester Public Transport Reporting & Data Quality Analysis</h3>
-                    <p style="font-size: 14px; color: #5a626a; font-style: italic; margin-bottom: 10px;">Power BI | Power Query | DAX | Data Modelling | Data Quality</p>
-                    <p>Analysed and transformed 58,320 scheduled transport records into an interactive Power BI reporting dashboard.
+    <!-- TRAINING -->
+    <section class="section section-white" id="training">
+        <div class="container">
 
-During data validation, I identified a classification issue affecting approximately 16.5% of a key reporting measure. I investigated the underlying day-of-service logic, corrected the transformation process and validated the revised outputs.
-
-The project included:
-
-Data cleaning and transformation using Power Query
-Relational data modelling
-DAX measures and calculated fields
-Data-quality checks and anomaly investigation
-Peak and off-peak performance analysis
-Interactive KPI and trend reporting
-
-Key outcome: Improved the reliability of the reporting logic and created a clearer view of transport activity across routes and operating periods. </p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii/Greater-Manchester" target="_blank" class="btn">View Project on GitHub</a>
-                    </div>
-                </div>
+            <div class="section-heading">
+                <span class="section-label">Professional Development</span>
+                <h2>Healthcare & Data Training</h2>
+                <p>
+                    Training supporting my understanding of healthcare
+                    information, data quality and responsible use of data.
+                </p>
             </div>
 
-            <div class="project-card">
-             <img src="assets/images/imagesshap_summary.jpg" alt="SHAP Machine Learning Plot Preview" style="object-fit: contain; background: #fff;">
-                <div class="project-card-content">
-                    <h3>Health Data Analysis & Predictive Modelling: UK Millennium Cohort Study</h3>
-                    <p>Engineered an end-to-end predictive analytics pipeline in Python evaluating four supervised classifiers on an analytic sample of 14,914 records from the UK Millennium Cohort Study. Structured robust class-imbalance treatments and integrated SHAP (Shapley Additive Explanations) metrics to decode black-box models, mapping exact environmental risk contributions over baseline assumptions.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii/toddler-anxiety-ml-prediction" target="_blank" class="btn">View Code (GitHub)</a>
-                        <a href="https://github.com/PapiiChii/toddler-anxiety-ml-prediction/tree/main/reports" target="_blank" class="btn btn-secondary">Read Dissertation</a>
-                    </div>
-                </div>
-            </div>
+            <div class="training-grid">
 
-      
-         
-         <div class="project-card">
-                <img src="assets/images/feature.png" alt="Predictive Supply Chain Pipeline Architecture" style="object-fit: cover; background: #fff;">
-                <div class="project-card-content">
-                    <h3>Predictive Supply Chain Pipeline: From SQL Staging to Explainable ML</h3>
-                    <p style="font-size: 14px; color: #5a626a; font-style: italic; margin-bottom: 10px;">PostgreSQL | Python (pandas & scikit-learn) | SHAP  | Random Forest</p>
-                    <p>Engineered an end-to-end data pipeline extracting 110k+ transactional records from a local PostgreSQL instance to proactively mitigate late-stage e-commerce order cancellations. Implemented custom python feature engineering to calculate spatial volumes and consumer friction ratios. Resolved an extreme <code style="background-color: #f6f8fa; padding: 2px 4px; border-radius: 3px; font-size: 13px;">~0.5%</code> minority class imbalance via stratified splitting and balanced random forests to successfully flag 25% of all system cancellations at ingestion, removing 'black-box' limitations using SHAP directional visual matrices.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii/Supply-chain-analytics" target="_blank" class="btn">View Code & Analytics</a>
-                    </div>
+                <div class="training-card">
+                    <h3>Data Security Awareness</h3>
+                    <span class="training-provider">
+                        Healthcare Data Training
+                    </span>
+                    <p>
+                        Training covering confidentiality, information security
+                        and responsible handling of sensitive healthcare data.
+                    </p>
                 </div>
-            </div>   
 
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="NLP Analytics Matrix View" alt="NLP Project Preview">
-                <div class="project-card-content">
-                    <h3>Customer Sentiment & NLP Analysis Pipeline</h3>
-                    <p>Built a text analytics processing pipeline using Python to parse, clean, and classify over 3,600 unorganized customer feedback interaction records. Leveraged text aggregation and regex techniques to construct an analytical engine achieving 78% prediction model accuracy, isolating targeted stages of user retention risk.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii" target="_blank" class="btn">Documentation</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Business Intelligence Dashboard Graph" alt="BI Dashboard Preview">
-                <div class="project-card-content">
-                    <h3>Process Automation & Operational BI Dashboard</h3>
-                    <p>Designed and deployed interactive, self-service reporting environments across Power BI and Looker Studio to break data operational silos. Conducted requirements scoping with stakeholders and used Excel Power Query to architect reusable data governance and automated pipeline transformation workflows.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii" target="_blank" class="btn">Documentation</a>
-                    </div>
+                <div class="training-card">
+                    <h3>Data Standardisation</h3>
+                    <span class="training-provider">
+                        HDR UK Learn
+                    </span>
+                    <p>
+                        Developed understanding of consistent data definitions,
+                        structures and standards required for reliable analysis
+                        and reporting.
+                    </p>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80" alt="Relational Database Schema Layout" alt="SQL Database Project Preview">
-                <div class="project-card-content">
-                    <h3>Commercial Risk & Database Optimization Framework</h3>
-                    <p>Developed a relational database framework using advanced SQL multi-table JOIN operations and subqueries to audit multi-variable time-series commercial datasets. Performed records validation to eliminate duplication anomalies and structured risk matrix forecasts to optimize performance tracking.</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/PapiiChii" target="_blank" class="btn">Documentation</a>
-                    </div>
+
+                <div class="training-card">
+                    <h3>Learning Health Systems</h3>
+                    <span class="training-provider">
+                        HDR UK Learn
+                    </span>
+                    <p>
+                        Explored how routinely collected health information can
+                        support continuous learning, service improvement and
+                        evidence-based decision-making.
+                    </p>
                 </div>
+
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="skills" class="section">
-    <div class="container">
-        <h2>Technical Skillset</h2>
-        <div class="skills-table">
-            
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">Technical Skills</span>
+                <h2>Tools & Capabilities</h2>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-group">
+
                     <h3>Reporting & Business Intelligence</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Power BI</li>
-                    <li>Excel</li>
-                    <li>Power Query</li>
-                    <li>DAX</li>
-                    <li>Excel Pivot Dashboards</li>
-                    <li>Matplotlib & Seaborn</li>
-                </ul>
-            </div>
 
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Microsoft Excel</span>
+                        <span class="skill-tag">Power Query</span>
+                        <span class="skill-tag">DAX</span>
+                        <span class="skill-tag">Pivot Tables</span>
+                        <span class="skill-tag">Looker Studio</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
                     <h3>Data Analysis & Databases</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>SQL (Advanced Querying, Joins)</li>
-                    <li>Python (Pandas, NumPy, Scikit-Learn)</li>
-                     <li>PostgreSQL</li>
-                    <li>Google Analytics 4 (GA4)</li>
-                    <li>R Studio</li>
-                    <li>Statistical Inference</li>
-                </ul>
-            </div>
 
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">EDA</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
                     <h3>Data Quality & Information Management</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Data validation</li>
-                    <li>Reconciliation</li>
-                    <li>Anomaly Detection</li>
-                    <li>Missing Data Analysis</li>
-                    <li>Data Governance & Quality Audits</li>
-                    <li>Class Imbalance Management</li>
-                </ul>
-            </div>
 
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
-                    <h3>Advanced Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Validation</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">Anomaly Detection</span>
+                        <span class="skill-tag">Data Standardisation</span>
+                        <span class="skill-tag">Missing Data Analysis</span>
+                        <span class="skill-tag">Data Governance</span>
+                        <span class="skill-tag">Confidentiality</span>
+                    </div>
+
                 </div>
-                <ul class="skill-list">
-                    <li>Scikit-learn</li>
-                    <li>XGBoost</li>
-                     <li>Random Forest</li>
-                    <li>Logistic Regression</li>
-                    <li>Model Evaluation</li>
-                    <li>SHAP</li>
-                </ul>
+
+
+                <div class="skill-group">
+
+                    <h3>Advanced Analytics</h3>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">Random Forest</span>
+                        <span class="skill-tag">Logistic Regression</span>
+                        <span class="skill-tag">SHAP</span>
+                        <span class="skill-tag">Cross-validation</span>
+                        <span class="skill-tag">Model Evaluation</span>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Send me a message</h2>
-        
-        <form action="https://formsubmit.co/aoomogbolahan@gmail.com" method="POST" class="contact-form">
-            <p>Interested in collaborating or have questions about my analytical pipelines? I'd love to hear from you!</p>
 
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </div>
-</section>
+    <!-- EXPERIENCE -->
+    <section class="section section-white" id="experience">
+        <div class="container">
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Omogbolahan Oladapo. All rights reserved.</p>
-    </div>
-</footer>
+            <div class="section-heading">
+                <span class="section-label">Experience</span>
+                <h2>Professional Background</h2>
+                <p>
+                    Frontline healthcare experience that complements my
+                    analytical and information-management skills.
+                </p>
+            </div>
 
-<script src="assets/js/main.js"></script>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        2025 – Present
+                    </div>
+
+                    <h3>
+                        Support Worker
+                    </h3>
+
+                    <div class="timeline-company">
+                        Health & Social Care
+                    </div>
+
+                    <p>
+                        Maintain accurate and confidential digital records,
+                        communicate structured handovers, document incidents and
+                        welfare information, identify changes requiring
+                        escalation and work across services with different
+                        systems and processes.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        2024 – 2025
+                    </div>
+
+                    <h3>
+                        Healthcare Support Worker
+                    </h3>
+
+                    <div class="timeline-company">
+                        Health & Social Care
+                    </div>
+
+                    <p>
+                        Supported structured care routines while maintaining
+                        accurate welfare and medication-related documentation.
+                        Worked with sensitive personal information in line with
+                        confidentiality and organisational requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">Education</span>
+                <h2>Academic Background</h2>
+            </div>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <h3>MSc Data Science</h3>
+                    <p>
+                        University of Salford
+                    </p>
+                </div>
+
+
+                <div class="education-card">
+                    <h3>MSc Management & International Business</h3>
+                    <p>
+                        Postgraduate study in business operations, management
+                        and organisational decision-making.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+
+            <div class="contact-box">
+
+                <span class="section-label">
+                    Get In Touch
+                </span>
+
+                <h2>
+                    Interested in working together?
+                </h2>
+
+                <p>
+                    I am currently interested in opportunities in Information
+                    Analysis, Business Intelligence, Health Informatics,
+                    Reporting, Data Quality and Healthcare Analytics.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a
+                        href="mailto:aoomogbolahan@gmail.com"
+                        class="contact-button"
+                    >
+                        Email Me
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/omogbolahan-oladapo/"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-button"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="https://github.com/PapiiChii"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-button"
+                    >
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        © 2026 Omogbolahan Oladapo. All rights reserved.
+    </footer>
+
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+
+        menuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+    </script>
 
 </body>
 </html>
